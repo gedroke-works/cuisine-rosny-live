@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./img/favicon.png" />
@@ -16,15 +16,22 @@
         <i class="text-white font-bold text-xl fa-solid fa-utensils mt-1 mr-2"></i>
         <a class="text-white font-bold text-lg  leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase" href="./index.html">Denrées d'Anna</a>
         <button 
-          class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus-outline-none"
+          class="block lg:hidden transition-all ease-in-out cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent outline-none focus-outline-none"
           type="button"
-          onclick=""
+          onclick="dropdown()"
         >
           <i class="fas fa-bars text-white"></i>
+          <ul class="dropdown-menu hidden bg-white flex flex-col items-center gap-6">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">SERVICE</a></li>
+          </ul>
         </button>
       </div>
       <!--nav-btn-->
       <div class="flex-grow items-center bg-white lg:flex lg:ml-auto lg:bg-opacity-0 lg:shadow-none hidden" id="collapse-navbar">
+        
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-5">
           <!--icon 1-->
           <li class="flex items-center">
@@ -251,11 +258,28 @@
                     <img class="w-full object-contain rounded-lg" src="./img/card.png" alt="card image">
                   </div>
                   <div  class="card-title px-4 py-2">
-                    <h4 id="title-classic" class="font-bold text-xl text-left">404 Menu Classique (Lundi)</h4>
+                    <h4 id="title-classic" class="font-bold text-xl text-left">Menu Tieb Poulet</h4>
                   </div>
                   <div  class="card-desc px-4 py-2">
-                    <p id="desc-classic" class="font-medium text-left text-lg py-8">
-                      Menu Classique avec un plat classique et des ingredients classiques.
+                    <!--entrée-->
+                    <hr>
+                    <h4 class="font-semibold text-left text-lg">Entrée</h4>
+                    <p id="desc-classic-1" class="font-medium text-left text-sm pt-2">
+                      Pastels(thon, fromage, viande hachée)
+                    </p>
+                    <hr>
+                    <!--plat-->
+                    <hr>
+                    <h4 class="font-semibold text-left text-lg">Plat principal</h4>
+                    <p id="desc-classic-2" class="font-medium text-left text-sm pt-2">
+                      Tieb Poulet
+                    </p>
+                    <hr>
+                    <!--boisson-->
+                    <hr>
+                    <h4 class="font-semibold text-left text-lg">Boisson</h4>
+                    <p id="desc-classic-3" class="font-medium text-left text-sm pt-2">
+                      Bissap
                     </p>
                   </div>
                 </div>
@@ -265,12 +289,29 @@
                     <img class="w-full object-contain rounded-lg" src="./img/card.png" alt="card image">
                   </div>
                   <div class="card-title font-bold px-4 py-2">
-                    <h4  id="title-veggie" class="font-bold text-xl text-left">404 Menu Végétarien (Lundi)</h4>
+                    <h4  id="title-veggie" class="font-bold text-xl text-left">Menu Tieb Poisson</h4>
                   </div>
                   <div class="card-desc px-4 py-2">
-                    <p  id="desc-veggie" class="font-medium text-left text-lg py-8">
-                      Menu végétarien avec tout comme le menu classique mais végétarien.
-                    </p>
+                        <!--entrée-->
+                        <hr>
+                        <h4 class="font-semibold text-left text-lg">Entrée</h4>
+                        <p id="desc-veggie-1" class="font-medium text-left text-sm pt-2">
+                          Pastels(thon, fromage)
+                        </p>
+                        <hr>
+                        <!--plat-->
+                        <hr>
+                        <h4 class="font-semibold text-left text-lg">Plat principal</h4>
+                        <p id="desc-veggie-2" class="font-medium text-left text-sm pt-2">
+                          Tieb Poisson
+                        </p>
+                        <hr>
+                        <!--boisson-->
+                        <hr>
+                        <h4 class="font-semibold text-left text-lg">Boisson</h4>
+                        <p id="desc-veggiec-3" class="font-medium text-left text-sm pt-2">
+                          Bissap
+                        </p>
                   </div>
                 </div>
                 </div>
@@ -352,13 +393,14 @@
                     </p>
                     <!--form-->
                     <form class="flex flex-col gap-4" action="https://formsubmit.co/ibrahim.elmhadri@gmail.com" method="POST">
-                      <input type="hidden" name="_subject" value="New Order">
-                      <input type="hidden" name="_autoresponse" value="Thank you !">
-                      <input type="hidden" name="_template" value="box">
+                      <input type="hidden" name="_subject" value="Nouvelle Commande">
+                      <input type="hidden" name="_body" value="Voici les details d'une nouvelle commande !">
+                      <input type="hidden" name="_autoresponse" value="Merci de nous avoir choisi !">
+                      <input type="hidden" name="_template" value="table">
                     
                       <label for="name">Nom: </label>
                       <input class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" 
-                             type="text" id="name" name="name" placeholder="Nom" required>
+                             type="text" id="name" name="nom" placeholder="Nom" required>
   
                       <label for="email">Email: </label>
                       <input class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
@@ -366,16 +408,26 @@
                       
                       <label for="choice">Menu: </label>
                       <input 
-                                    class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full"       
-                                    type="select" id="choice" name="menu" list="menuList"
-                                    placeholder ="Specifiez le jour du menu que vous voulez(ex: Mardi)"
+                              class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full"       
+                              type="select" id="choice" name="menu" list="menuList"
+                              placeholder ="Specifiez le jour du menu que vous voulez(ex: Mardi)"
                       >
+
+                      <label for="name">Quantité: </label>
+                      <input class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" 
+                             type="number" id="number" name="quantité" placeholder="Combien de portion voulez-vous au total ? (ex: 4)" required
+                      >
+
+                      <label for="name">Dont végétarien ?: </label>
+                      <input class="border-0 px-3 py-3 placeholder-gray-300 text-gray-800 bg-gray-50 rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150" 
+                             type="number" id="number-veggie" name="quantité-végétarien" placeholder="Combien de portions végétariennes ?" required>
+
                       <datalist id="menuList">
-                        <option value="Monday">Lundi</option>
-                        <option value="Tuesday">Mardi</option>
-                        <option value="Wednesday">Mercredi</option>
-                        <option value="Thursday">Jeudi</option>
-                        <option value="Friday">Vendredi</option>
+                        <option value="Lundi">Lundi</option>
+                        <option value="Mardi">Mardi</option>
+                        <option value="Mercredi">Mercredi</option>
+                        <option value="Jeudi">Jeudi</option>
+                        <option value="Vendredi">Vendredi</option>
                       </datalist>       
   
                       <label for="message">Message:</label>
@@ -420,7 +472,6 @@
 
                 <button class="bg-white text-gray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                   <a href="https://www.instagram.com/" target="_blank"> <i class="fab fa-instagram-square"></i></a>
-                  
                 </button >
               </div>
             </div>
@@ -501,45 +552,83 @@
   
         /*card content reference*/
         let titleClassic = document.getElementById("title-classic");
-        let descClassic = document.getElementById("desc-classic");
+        let descClassic1 = document.getElementById("desc-classic-1");
+        let descClassic2 = document.getElementById("desc-classic-2");
+        let descClassic3 = document.getElementById("desc-classic-3");
+
         let titleVeggie = document.getElementById("title-veggie");
-        let descVeggie = document.getElementById("desc-veggie");
+        let descVeggie1 = document.getElementById("desc-veggie-1");
+        let descVeggie2 = document.getElementById("desc-veggie-2");
+        let descVeggie3 = document.getElementById("desc-veggie-3");
+
   
         if(day === monday) {
-          titleClassic.innerHTML="404 Menu Classique (Lundi)";
-          titleVeggie.innerHTML = "404 Menu Végétarien (Lundi)";
-          descClassic.innerHTML = "Menu Classique avec un plat classique et des ingredients classiques.";
-          descVeggie.innerHTML = "Menu végétarien avec tout comme le menu classique mais végétarien.";
+          titleClassic.innerHTML="Menu Tieb Poulet";
+          titleVeggie.innerHTML = "Menu Tieb Poisson";
+          descClassic1.innerHTML ="Pastels(thon, fromage, viande hachée)";
+          descClassic2.innerHTML ="Tieb Poulet";
+          descClassic3.innerHTML ="Bissap";
+          descVeggie1.innerHTML ="Pastels(thon, fromage, épinard)";
+          descVeggie2.innerHTML ="Tieb Poisson";
+          descVeggie3.innerHTML ="Bissap";
+
           console.log("click");
         } else if (day === tuesday) {
-          titleClassic.innerHTML="404 Menu Classique (Mardi)";
-          titleVeggie.innerHTML = "404 Menu Végétarien (Mardi)";
-          descClassic.innerHTML = "Menu Classique avec un plat classique et des ingredients classiques.";
-          descVeggie.innerHTML = "Menu végétarien avec tout comme le menu classique mais végétarien.";
+          titleClassic.innerHTML="Menu Yassa Poulet";
+          titleVeggie.innerHTML = "Menu Yassa Poisson";
+          descClassic1.innerHTML ="Pastels(thon, fromage, viande hachée)";
+          descClassic2.innerHTML ="Yassa Poulet";
+          descClassic3.innerHTML ="Jus de Baobab";
+          descVeggie1.innerHTML ="Pastels(thon, fromage, épinard)";
+          descVeggie2.innerHTML ="Yassa Poisson";
+          descVeggie3.innerHTML ="Jus de Baobab";
           console.log("click");
   
         } else if (day === wednesday) {
-          titleClassic.innerHTML="404 Menu Classique (Mercredi)";
-          titleVeggie.innerHTML = "404 Menu Végétarien (Mercredi)";
-          descClassic.innerHTML = "Menu Classique avec un plat classique et des ingredients classiques.";
-          descVeggie.innerHTML = "Menu végétarien avec tout comme le menu classique mais végétarien.";
+          titleClassic.innerHTML="Menu Poulet Braisé (Aloco)";
+          titleVeggie.innerHTML = "Menu Poisson Braisé";
+          descClassic1.innerHTML ="Pastels(thon, fromage, viande hachée)";
+          descClassic2.innerHTML ="Poulet Braisé";
+          descClassic3.innerHTML ="Jus de Gingembre";
+          descVeggie1.innerHTML ="Pastels(thon, fromage, épinard)";
+          descVeggie2.innerHTML ="Poisson Braisé";
+          descVeggie3.innerHTML ="Jus de Gingembre";
           console.log("click");
   
         } else if (day === thursday) {
-          titleClassic.innerHTML="404 Menu Classique (Jeudi)";
-          titleVeggie.innerHTML = "404 Menu Végétarien (Jeudi)";
-          descClassic.innerHTML = "Menu Classique avec un plat classique et des ingredients classiques.";
-          descVeggie.innerHTML = "Menu végétarien avec tout comme le menu classique mais végétarien.";
+          titleClassic.innerHTML="Menu Fumbwa Boeuf";
+          titleVeggie.innerHTML = "Menu Poisson Salé";
+          descClassic1.innerHTML ="Pastels(thon, fromage, viande hachée)";
+          descClassic2.innerHTML ="Fumbwa Boeuf";
+          descClassic3.innerHTML ="Bissap";
+          descVeggie1.innerHTML ="Pastels(thon, fromage, épinard)";
+          descVeggie2.innerHTML ="Poisson Salé";
+          descVeggie3.innerHTML ="Bissap";
           console.log("click");
   
         } else if (day === friday) {
-          titleClassic.innerHTML="404 Menu Classique (Vendredi)";
-          titleVeggie.innerHTML = "404 Menu Végétarien (Vendredi)";
-          descClassic.innerHTML = "Menu Classique avec un plat classique et des ingredients classiques.";
-          descVeggie.innerHTML = "Menu végétarien avec tout comme le menu classique mais végétarien.";
+          titleClassic.innerHTML="Menu Queue de Boeuf Gombo";
+          titleVeggie.innerHTML = "Menu Poisson Braisé";
+          descClassic1.innerHTML ="Pastels(thon, fromage, viande hachée)";
+          descClassic2.innerHTML ="Queue de Boeuf Gombo";
+          descClassic3.innerHTML ="Jus de Baobab";
+          descVeggie1.innerHTML ="Pastels(thon, fromage, épinard)";
+          descVeggie2.innerHTML ="Poisson Braisé";
+          descVeggie3.innerHTML ="Jus de Baobab";
           console.log("click");
         } 
       }
+      function dropdown(){
+        let dropdown = document.querySelector(".dropdown");
+        dropdown.addEventListener('click', (e) => {
+          if(dropdown.classList.contains('closed')) {
+            dropdown.classList.remove('closed');
+          } else {
+            dropdown.classList.add('closed');
+          }
+        })
+      }
     </script>
+
   </body>
 </html>
