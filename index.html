@@ -18,40 +18,33 @@
         <button 
           class="block lg:hidden transition-all ease-in-out cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent outline-none focus-outline-none"
           type="button"
-          onclick="dropdown()"
+          id="dropdownButton"
+          data-dropdown-toggle="dropdown"
+          onclick=""
         >
           <i class="fas fa-bars text-white"></i>
-          <ul class="dropdown-menu hidden bg-white flex flex-col items-center gap-6">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">MENU</a></li>
-            <li><a href="#">SERVICE</a></li>
-          </ul>
         </button>
       </div>
       <!--nav-btn-->
-      <div class="flex-grow items-center bg-white lg:flex lg:ml-auto lg:bg-opacity-0 lg:shadow-none hidden" id="collapse-navbar">
+      <div class="flex-grow items-center bg-white lg:flex lg:ml-auto lg:bg-opacity-0 lg:shadow-none hidden">
         
         <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-5">
           <!--icon 1-->
           <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-slate-200 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#about">
-              <i class="text-white fas fa-house-user text-lg leading-lg"></i>
-              <span class="lg:hidden inline-block ml-2">À propos</span>
+            <a class="lg:text-white lg:hover:text-slate-300 transition-all ease-in-out text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#about">
+              <span class=" inline-block ml-2">À propos</span>
             </a>
           </li>
           <!--icon 2-->
           <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-slate-200 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#menu">
-              <i class="text-white fas fa-clipboard text-lg leading-lg"></i>
-              <span class="lg:hidden inline-block ml-2">Nos Menus</span>
+            <a class="lg:text-white lg:hover:text-slate-300 transition-all ease-in-out text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#menu">
+              <span class=" inline-block ml-2">Nos Menus</span>
             </a>
           </li>
           <!--icon 3-->
           <li class="flex items-center">
-            <a class="lg:text-white lg:hover:text-slate-200 text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#service">
-              <i class="text-white fas fa-bread-slice text-lg leading-lg"></i>
-              <span class="lg:hidden inline-block ml-2">Notre Service</span>
+            <a class="lg:text-white lg:hover:text-slate-300 transition-all ease-in-out text-slate-700 px-3 py-4 lg:py-2 flex items-center text-lg uppercase font-bold" href="#service">
+              <span class=" inline-block ml-2">Notre Service</span>
             </a>
           </li>
           <!--cta-->
@@ -60,6 +53,16 @@
               <a href="#order">Commandez Maintenant</a>
             </button>
           </li>
+        </ul>
+      </div>
+      <!--dropdown-menu-->
+      <div class="bg-white w-full mt-4 lg:hidden hidden" id="dropdown">
+        <ul aria-labelledby="dropdownButton" class="text-center text-2xl flex flex-col items-start gap-6">
+          <li class="w-full cursor-pointer hover:bg-gray-800 hover:text-slate-100 transition-all ease-in-out "><a href="#about">À propos</a></li>
+          <li class="w-full cursor-pointer hover:bg-gray-800 hover:text-slate-100 transition-all ease-in-out "><a href="#menu">Nos Menus</a></li>
+          <li class="w-full cursor-pointer hover:bg-gray-800 hover:text-slate-100 transition-all ease-in-out "><a href="#service">Notre Service</a></li>
+          <li class="w-full cursor-pointer hover:bg-gray-800 hover:text-slate-100 transition-all ease-in-out "><a href="#order">Commandez Maintenant</a></li>
+
         </ul>
       </div>
     </nav>
@@ -540,7 +543,7 @@
     </footer>
     <!--FOOTER CONTENT END-->
 
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./node_modules/flowbite/dist/flowbite.js"></script>
     <script type="text/javascript">
     function openMenu(day) {
         /*checking reference*/
@@ -617,16 +620,6 @@
           descVeggie3.innerHTML ="Jus de Baobab";
           console.log("click");
         } 
-      }
-      function dropdown(){
-        let dropdown = document.querySelector(".dropdown");
-        dropdown.addEventListener('click', (e) => {
-          if(dropdown.classList.contains('closed')) {
-            dropdown.classList.remove('closed');
-          } else {
-            dropdown.classList.add('closed');
-          }
-        })
       }
     </script>
 
